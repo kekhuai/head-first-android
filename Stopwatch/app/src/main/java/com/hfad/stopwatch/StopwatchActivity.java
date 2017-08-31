@@ -66,21 +66,6 @@ public class StopwatchActivity extends Activity {
         outState.putBoolean("wasRunning", wasRunning);
     }
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        wasRunning = running;
-//        running = false;
-//    }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if (wasRunning) {
-//            running = true;
-//        }
-//    }
-
     @Override
     protected void onPause() {
         super.onPause();
