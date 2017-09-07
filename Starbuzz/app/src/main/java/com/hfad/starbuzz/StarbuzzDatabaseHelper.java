@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "starbuzz";
+    static final String DB_NAME = "starbuzz";
 
-    private static final int DB_VERSION = 2;
+    static final int DB_VERSION = 3;
 
     public StarbuzzDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DB_NAME, null, DB_VERSION);
+        super(context, name, null, version);
     }
 
     public StarbuzzDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
@@ -44,11 +44,12 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
                     "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "NAME TEXT, " +
                     "DESCRIPTION TEXT," +
-                    "IMAGE_RESOURCE_ID INTEGER");
+                    "IMAGE_RESOURCE_ID INTEGER)");
             insertDrink(db, "Latte", "Espresso and steamed milk", R.drawable.latte);
             insertDrink(db, "Cappuccino", "Espresso, hot milk and steamed milk foam", R.drawable.cappuccino);
             insertDrink(db, "Filter", "Our best drip coffee", R.drawable.filter);
-        } else if (oldVersion == 2) {
+        }
+        if (oldVersion < 3) {
             db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC;");
         }
     }
