@@ -17,7 +17,7 @@
         <item>Spaghetti Bolognese</item>
         <item>Lasagne</item>
     </string-array>
-    
+
     <string-array name="stores">
         <item>Cambridge</item>
         <item>Sebastopol</item>
@@ -29,7 +29,9 @@
         <item>Pasta</item>
         <item>Stores</item>
     </string-array>
-    
+
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
+    <string name="title_activity_pizza_detail">Pizza detail</string>
+    <string name="welcome_text">We offer a range of freshly baked pizza and pasta dishes. Why not try some?</string>
 </resources>
